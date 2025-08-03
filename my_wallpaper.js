@@ -1,11 +1,37 @@
 //your parameter variables go here!
-let leafX = 100;
-let leafY = 100;
 
+//calls the leafX and leafY- they are set to random downthe bottom for a leafy pile effect 
+let leafX;
+let leafY;
+
+//this lets the random location function to be adjusted 
+let x1 = 0;
+let x2 = 200;
+let y1 = 0;
+let y2 = 200;
+
+//ajust the amount of leaves
+let numLeaves = 50; 
+
+//rotation adjustment 
+let leafDirections1 = 0;
+let leafDirections2 = 360;
+
+//ajust the size for each leaf type 
+let b1size= 1;
+let b2size= 1;
+let b3size= 1;
+let m1size= 1;
+let m2size= 1;
+let m3size= 1;
+let o1size= 1;
+let o2size= 1;
+let o3size= 1;
+
+//branches which cross the squares for a more controlled 'tiling' effect 
 
 
 function setup_wallpaper(pWallpaper) {
-  angleMode(DEGREES)
   translate(leafX,leafY);
   pWallpaper.output_mode(DEVELOP_GLYPH);
   //pWallpaper.output_mode(GRID_WALLPAPER);
@@ -17,6 +43,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 0;
+  
 }
 
 function wallpaper_background() {
@@ -24,21 +51,17 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-let randomNumber = random(360); //rotation
-let numLeaves = floor(random(99,100)); // amount of leaves
-
-  for (let i = 0; i < numLeaves; i++) {
-    let leafX = random(0, 200);         // position within the cell
-    let leafY = random(0, 200);
-    let rotation = random(360);      
-    let leafType = floor(random(9));    // 0 to 8
-    let scaleFactor = random(0.8, 1.2); // optional size variation
-
+  //after asking chat gpt, i learnted the my code wasnt working as i had to have the random variables after the setup wallpaper function as that initiates the random to work :/
+  for (let i = 0; i < numLeaves; i++) { //looping so each of the leaves will have a different rotation and location
+    let leafX = random(x1, x2);      
+    let leafY = random(0, 200);    // random positions within the grid square
+    let rotation = random(leafDirections1,leafDirections2);      // rotates the leaves to the vales that i can adjust with the parameters  
+    let leafType = floor(random(9));    // 0 to 8 so 9 different numbers that can be picked which can correspond to each of my leaves - randomly selected
+    
+    //this selectes and randomised the leaf types using a switch statement - it sets the rotation and location of the leaves based upon the ablove randomised variables
     push();
     translate(leafX, leafY);
     rotate(rotation);
-    scale(scaleFactor);
-
     switch (leafType) {
       case 0:
         basicLeaf1(0, 0);
@@ -72,13 +95,14 @@ let numLeaves = floor(random(99,100)); // amount of leaves
     pop();
   }
 
+ 
 }
 
 
-function basicLeaf1 (leafX,leafY){
+function basicLeaf1 (leafX,leafY){//basic looking leaf- dark green
 push()
 translate(leafX,leafY)
-
+scale(b1size);
 rotate()
 //branch
   fill(117, 86, 42);
@@ -104,10 +128,10 @@ rotate()
  
   pop()
 }
-function basicLeaf2 (leafX,leafY){
+function basicLeaf2 (leafX,leafY){//basic but bluey green
 push()
 translate(leafX,leafY)
-
+scale(b2size);
 //branch
   fill(94, 86, 22);
   stroke(59, 46, 29);
@@ -132,10 +156,10 @@ translate(leafX,leafY)
  
   pop()
 }
-function basicLeaf3 (leafX,leafY){
+function basicLeaf3 (leafX,leafY){//basic but yellowy green 
 push()
 translate(leafX,leafY)
-
+scale(b3size);
 //branch
   fill(94, 71, 22);
   stroke(43, 33, 10);
@@ -160,10 +184,10 @@ translate(leafX,leafY)
  
   pop()
 }
-function maple1 (leafX,leafY){
+function maple1 (leafX,leafY){//maple leaf with lively colour
 push()
 translate(leafX,leafY)
-
+scale(m1size);
 //mbranch
   fill(130, 76, 30);
   stroke(87, 48, 15);
@@ -218,10 +242,10 @@ translate(leafX,leafY)
 
 pop()
 }
-function maple2 (leafX,leafY){
+function maple2 (leafX,leafY){//red maple leaf
 push()
 translate(leafX,leafY)
-
+scale(m2size);
 //mbranch
   fill(130, 95, 30);
   stroke(74, 54, 16);
@@ -279,7 +303,7 @@ pop()
 function maple3 (leafX,leafY){
 push()
 translate(leafX,leafY)
-
+scale(m3size);
 //mbranch
   fill(128, 73, 20);
   stroke(102, 59, 17);
@@ -337,7 +361,7 @@ pop()
 function oak1 (leafX,leafY){
   push()
   translate(leafX,leafY)
-
+scale(o1size);
 //obranch
   fill(133, 117, 82);
   stroke(71, 63, 44);
@@ -397,7 +421,7 @@ pop()
 function oak2 (leafX,leafY){
   push()
   translate(leafX,leafY)
-
+scale(o2size);
 //obranch
   fill(94, 97, 61);
   stroke(57, 59, 39);
@@ -457,7 +481,7 @@ pop()
 function oak3 (leafX,leafY){
   push()
   translate(leafX,leafY)
-
+scale(o3size);
 //obranch
   fill(133, 124, 28);
   stroke(84, 78, 17);
