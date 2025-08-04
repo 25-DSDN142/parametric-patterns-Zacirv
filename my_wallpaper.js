@@ -11,7 +11,7 @@ let y1 = 0;
 let y2 = 200;
 
 //ajust the amount of leaves
-let numLeaves = 10; 
+let numLeaves = 100; 
 
 //rotation adjustment 
 let leafDirections1 = 0;
@@ -54,7 +54,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //after asking chat gpt, i learnted the my code wasnt working as i had to have the random variables after the setup wallpaper function as that initiates the random to work :/
   for (let i = 0; i < numLeaves; i++) { //looping so each of the leaves will have a different rotation and location
     let leafX = random(x1, x2);      
-    let leafY = random(0, 200);    // random positions within the grid square
+    let leafY = random(y1,y2);    // random positions within the grid square
     let rotation = random(leafDirections1,leafDirections2);      // rotates the leaves to the vales that i can adjust with the parameters  
     let leafType = floor(random(9));    // 0 to 8 so 9 different numbers that can be picked which can correspond to each of my leaves - randomly selected
     
