@@ -11,7 +11,7 @@ let y1 = 0;
 let y2 = 200;
 
 //ajust the amount of leaves
-let numLeaves = 50; 
+let numLeaves = 10; 
 
 //rotation adjustment 
 let leafDirections1 = 0;
@@ -28,16 +28,16 @@ let o1size= 1;
 let o2size= 1;
 let o3size= 1;
 
-//branches which cross the squares for a more controlled 'tiling' effect 
-
+// optional branches which cross the squares for a more controlled 'tiling' effect - 1= no branch 0=branch
+let showBranch = 1;
 
 function setup_wallpaper(pWallpaper) {
   translate(leafX,leafY);
   pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -95,7 +95,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     pop();
   }
 
- 
+if (showBranch < 1){
+  branch();
+}
 }
 
 
@@ -242,7 +244,7 @@ scale(m1size);
 
 pop()
 }
-function maple2 (leafX,leafY){//red maple leaf
+function maple2 (leafX,leafY){//yellow/autumn maple leaf
 push()
 translate(leafX,leafY)
 scale(m2size);
@@ -300,7 +302,7 @@ scale(m2size);
 
 pop()
 }
-function maple3 (leafX,leafY){
+function maple3 (leafX,leafY){//red maple leaf
 push()
 translate(leafX,leafY)
 scale(m3size);
@@ -358,7 +360,7 @@ scale(m3size);
 
 pop()
 }
-function oak1 (leafX,leafY){
+function oak1 (leafX,leafY){//dark oak leaf
   push()
   translate(leafX,leafY)
 scale(o1size);
@@ -418,7 +420,7 @@ scale(o1size);
 
 pop()
 }
-function oak2 (leafX,leafY){
+function oak2 (leafX,leafY){//olive oak leaf
   push()
   translate(leafX,leafY)
 scale(o2size);
@@ -478,7 +480,7 @@ scale(o2size);
 
 pop()
 }
-function oak3 (leafX,leafY){
+function oak3 (leafX,leafY){//dry and brown oak leaf
   push()
   translate(leafX,leafY)
 scale(o3size);
@@ -537,4 +539,43 @@ scale(o3size);
   line(0+1,0-42,0-2,0-45);
 
 pop()
+}
+function branch() {
+fill(107, 65, 27);
+//branch1right
+  strokeWeight(1);
+  stroke(69, 43, 19);
+  beginShape();
+  vertex(200,80);
+  vertex(140, 125);
+vertex(150, 140);
+vertex(175, 115);
+vertex(200,100);
+
+ endShape();
+ //branch1left
+ beginShape();
+  vertex(0, 100);
+  vertex(10,110);
+  vertex(50,105);
+  vertex(52,100);
+  vertex(40,100);
+  vertex(20,100);
+  vertex(8,90);
+  vertex(15, 80);
+  vertex(30, 75);
+  vertex(80, 80);
+  vertex(76, 75);
+  vertex(30, 70);
+  vertex(15, 72);
+  vertex(10, 80);
+  vertex(12, 60);
+  vertex(15, 50);
+  vertex(40, 45);
+  vertex(35, 40);
+  vertex(12, 45);
+  vertex(9, 55);
+  vertex(6, 70);
+  vertex(0, 80);
+ endShape();
 }
