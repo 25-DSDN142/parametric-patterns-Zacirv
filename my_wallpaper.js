@@ -1,10 +1,10 @@
 //your parameter variables go here!
 
-//calls the leafX and leafY- they are set to random downthe bottom for a leafy pile effect 
+//calls the leafX and leafY- they are set to random down further for a leafy pile effect 
 let leafX;
 let leafY;
 
-//this lets the random location function to be adjusted 
+//this lets the random location of the leaves to be adjusted 
 let x1 = 0;
 let x2 = 200;
 let y1 = 0;
@@ -14,7 +14,7 @@ let y2 = 200;
 let numLeaves = 100; 
 
 //rotation adjustment 
-let leafDirections1 = 0;
+let leafDirections1 = 10;
 let leafDirections2 = 360;
 
 //ajust the size for each leaf type 
@@ -36,13 +36,13 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.row_offset  = 100;
   
 }
 

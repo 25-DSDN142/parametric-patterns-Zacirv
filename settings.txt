@@ -6,49 +6,268 @@ The bellow is just an example, feel free to disregard this documents contents.
 Your final settings.txt will look something like this when you are finished:
 
 /////////////////////////////////
-
 Wallpaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+
+//calls the leafX and leafY- they are set to random down further for a leafy pile effect 
+let leafX;
+let leafY;
+
+//this lets the random location of the leaves to be adjusted 
+let x1 = 0;
+let x2 = 200;
+let y1 = 0;
+let y2 = 200;
+
+//ajust the amount of leaves
+let numLeaves = 100; 
+
+//rotation adjustment 
+let leafDirections1 = 0;
+let leafDirections2 = 360;
+
+//ajust the size for each leaf type 
+let b1size= 1;
+let b2size= 1;
+let b3size= 1;
+let m1size= 1;
+let m2size= 1;
+let m3size= 1;
+let o1size= 1;
+let o2size= 1;
+let o3size= 1;
+
+// optional branches which cross the squares for a more controlled 'tiling' effect - 1= no branch 0=branch
+let showBranch = 1;
 
 function setup_wallpaper(pWallpaper) {
+  translate(leafX,leafY);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
+  
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
+  
 }
 
 /////////////////////////////////
-
 Wallpaper 2:
 
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+
+//calls the leafX and leafY- they are set to random down further for a leafy pile effect 
+let leafX;
+let leafY;
+
+//this lets the random location of the leaves to be adjusted 
+let x1 = 0;
+let x2 = 200;
+let y1 = 0;
+let y2 = 200;
+
+//ajust the amount of leaves
+let numLeaves = 5; 
+
+//rotation adjustment 
+let leafDirections1 = 0;
+let leafDirections2 = 0;
+
+//ajust the size for each leaf type 
+let b1size= 3;
+let b2size= 3;
+let b3size= 3;
+let m1size= 3;
+let m2size= 3;
+let m3size= 3;
+let o1size= 3;
+let o2size= 3;
+let o3size= 3;
+
+// optional branches which cross the squares for a more controlled 'tiling' effect - 1= no branch 0=branch
+let showBranch = 1;
 
 function setup_wallpaper(pWallpaper) {
+  translate(leafX,leafY);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
+  
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 0;
+  
 }
+
+////////////////////////////
+Wallpaper 3:
+
+//your parameter variables go here!
+
+//calls the leafX and leafY- they are set to random down further for a leafy pile effect 
+let leafX;
+let leafY;
+
+//this lets the random location of the leaves to be adjusted 
+let x1 = 0;
+let x2 = 200;
+let y1 = 0;
+let y2 = 200;
+
+//ajust the amount of leaves
+let numLeaves = 10; 
+
+//rotation adjustment 
+let leafDirections1 = 0;
+let leafDirections2 = 90;
+
+//ajust the size for each leaf type 
+let b1size= 1;
+let b2size= 1.5;
+let b3size= 2;
+let m1size= 0.5;
+let m2size= 2;
+let m3size= 1;
+let o1size= 3;
+let o2size= 0.5;
+let o3size= 1.5;
+
+// optional branches which cross the squares for a more controlled 'tiling' effect - 1= no branch 0=branch
+let showBranch = 1;
+
+function setup_wallpaper(pWallpaper) {
+  translate(leafX,leafY);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 0;
+  
+}
+
+/////////////////////////////////
+Wallpaper 4:
+
+//your parameter variables go here!
+
+//calls the leafX and leafY- they are set to random down further for a leafy pile effect 
+let leafX;
+let leafY;
+
+//this lets the random location of the leaves to be adjusted 
+let x1 = 0;
+let x2 = 200;
+let y1 = 0;
+let y2 = 200;
+
+//ajust the amount of leaves
+let numLeaves = 50; 
+
+//rotation adjustment 
+let leafDirections1 = 0;
+let leafDirections2 = 270;
+
+//ajust the size for each leaf type 
+let b1size= 1;
+let b2size= 1;
+let b3size= 1;
+let m1size= 1;
+let m2size= 1;
+let m3size= 1;
+let o1size= 1;
+let o2size= 1;
+let o3size= 1;
+
+// optional branches which cross the squares for a more controlled 'tiling' effect - 1= no branch 0=branch
+let showBranch = 0;
+
+function setup_wallpaper(pWallpaper) {
+  translate(leafX,leafY);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+  
+}
+
+
+/////////////////////////////////
+Wallpaper 5:
+//your parameter variables go here!
+
+//calls the leafX and leafY- they are set to random down further for a leafy pile effect 
+let leafX;
+let leafY;
+
+//this lets the random location of the leaves to be adjusted 
+let x1 = 0;
+let x2 = 100;
+let y1 = 0;
+let y2 = 200;
+
+//ajust the amount of leaves
+let numLeaves = 100; 
+
+//rotation adjustment 
+let leafDirections1 = 0;
+let leafDirections2 = 360;
+
+//ajust the size for each leaf type 
+let b1size= 0.6;
+let b2size= 0.6;
+let b3size= 0.6;
+let m1size= 0.6;
+let m2size= 0.6;
+let m3size= 0.6;
+let o1size= 0.6;
+let o2size= 0.6;
+let o3size= 0.6;
+
+// optional branches which cross the squares for a more controlled 'tiling' effect - 1= no branch 0=branch
+let showBranch = 1;
+
+function setup_wallpaper(pWallpaper) {
+  translate(leafX,leafY);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 100;
+  
+}
+
+/////////////////////////////////
+Wallpaper 6:
+
+/////////////////////////////////
+Wallpaper 7:
+
+/////////////////////////////////
+Wallpaper 8:
+
+/////////////////////////////////
+Wallpaper 9:
